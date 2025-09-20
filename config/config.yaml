@@ -1,0 +1,57 @@
+# Configuration file for AVMI–GVSC Sound System Project
+
+# Project settings
+project:
+  name: "AVMI–GVSC Sound System Project"
+  version: "0.1.0"
+  project_id: "AVMI–GVSC10-2024"
+
+# Audio processing settings
+audio:
+  sample_rate: 48000
+  buffer_size: 512
+  bit_depth: 24
+  channels: 8  # Multi-channel setup
+  
+# Real-time processing
+realtime:
+  max_latency_ms: 20
+  processing_threads: 4
+  priority: "high"
+
+# Spatialization settings
+spatialization:
+  algorithm: "hrtf"  # Head-Related Transfer Function
+  room_modeling: true
+  distance_modeling: true
+  doppler_effect: true
+
+# Simulation integration
+simulation:
+  vi_grade_integration: true
+  simSound_api: true
+  update_rate_hz: 60
+  sync_tolerance_ms: 5
+
+# Sound object library
+sound_objects:
+  base_path: "assets/samples"
+  categories: ["engine", "environmental", "interface", "warning"]
+  synthesis_modes: ["sample", "modeled", "hybrid"]
+
+# Evaluation settings
+evaluation:
+  subjective_testing: true
+  objective_measurements: true
+  hardware_in_loop: true
+  metrics: ["latency", "fidelity", "immersion", "cpu_usage"]
+
+# Output settings
+output:
+  audio_samples_dir: "data/audio_samples"
+  simulation_data_dir: "data/simulation_data"
+  evaluation_results_dir: "data/evaluation_results"
+  sound_objects_dir: "results/sound_objects"
+  models_dir: "results/models"
+  reports_dir: "results/reports"
+  measurements_dir: "results/measurements"
