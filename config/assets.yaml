@@ -1,0 +1,98 @@
+# Audio Asset Management Configuration
+# This file defines how audio assets are stored and accessed externally
+
+asset_storage:
+  # Primary storage: Dropbox shared folder (separate from repository)
+  dropbox_shared:
+    enabled: true
+    # Path to shared Dropbox folder (separate from all repositories)
+    base_path: "~/Dropbox (Personal)/AVMI-GVSC-Audio-Assets"
+    # Alternative paths for different team members
+    alternative_paths:
+      - "~/Dropbox/AVMI-GVSC-Audio-Assets"
+      - "~/Dropbox (Work)/AVMI-GVSC-Audio-Assets"
+    
+    # Folder structure within shared assets folder
+    subfolders:
+      samples: "samples"
+      presets: "presets" 
+      templates: "templates"
+      evaluation_data: "evaluation_data"
+      raw_recordings: "raw_recordings"
+      processed: "processed"
+  
+  # Fallback: Direct cloud links (if Dropbox not synced)
+  cloud_fallback:
+    enabled: true
+    base_url: "https://dropbox.com/scl/fo/[folder_id]"
+    
+  # Git LFS for small version-controlled assets only
+  git_lfs:
+    enabled: true
+    max_file_size: "5MB"  # Keep very small for repository assets
+    track_patterns:
+      - "assets/presets/*.json"
+      - "assets/templates/*.xml"
+
+  # Asset organization
+  directory_structure:
+    samples:
+      description: "Raw audio samples and recordings"
+      storage_backend: "cloud_storage"
+      sync_policy: "on_demand"
+      
+    presets:
+      description: "Audio processing presets and configurations"
+      storage_backend: "git_lfs"
+      sync_policy: "always"
+      
+    templates:
+      description: "Audio template files for synthesis"
+      storage_backend: "git_lfs"
+      sync_policy: "always"
+      
+    evaluation_data:
+      description: "Large evaluation datasets"
+      storage_backend: "cloud_storage"
+      sync_policy: "manual"
+
+  # File size thresholds
+  size_thresholds:
+    small: "10MB"    # Keep in Git
+    medium: "100MB"  # Use Git LFS
+    large: "1GB"     # Use cloud storage
+    
+# Asset manifest tracking
+manifest:
+  # Track asset metadata without storing the files
+  track_metadata: true
+  include_checksums: true
+  include_file_info: true
+  update_policy: "automatic"
+
+# Synchronization settings
+sync:
+  # Automatic sync on git operations
+  git_hooks:
+    pre_commit: true
+    post_checkout: true
+    post_merge: true
+    
+  # Manual sync commands
+  commands:
+    download_all: "python scripts/asset_manager.py download --all"
+    download_subset: "python scripts/asset_manager.py download --category {category}"
+    upload: "python scripts/asset_manager.py upload {path}"
+    validate: "python scripts/asset_manager.py validate"
+
+# Development settings
+development:
+  # Use smaller subset for development
+  use_dev_subset: true
+  dev_subset_size: "1GB"
+  dev_categories: ["presets", "templates"]
+  
+  # Local cache settings
+  cache_enabled: true
+  cache_size_limit: "5GB"
+  cache_location: ".cache/audio_assets"

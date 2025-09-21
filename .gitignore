@@ -126,3 +126,50 @@ config/secrets.yml
 config/credentials.json
 *.key
 *.pem
+
+# Audio Assets - External Storage Management
+# Large audio files (>10MB) should be stored externally
+# Use Git LFS or cloud storage as configured in config/assets.yaml
+
+# Large audio files (exclude from direct git storage)
+*.wav
+*.flac
+*.aiff
+*.aif
+*.au
+*.snd
+*.mp3
+*.aac
+*.ogg
+*.wma
+*.m4a
+*.opus
+
+# Audio processing temporary files
+**/temp_audio/
+**/audio_cache/
+**/processed_temp/
+
+# Large datasets
+data/audio_samples/*.wav
+data/audio_samples/*.flac
+data/evaluation_results/large_datasets/
+data/simulation_data/audio_sim_*.wav
+
+# Asset cache
+.cache/
+.asset_cache/
+assets/cache/
+
+# Audio software temp files
+*.reapeaks
+*.pkf
+*.sfk
+*.asd
+*.als
+*.als~
+*.bak
+
+# Exceptions for small audio files that should be tracked
+# (Add specific files here if needed)
+# !assets/samples/small_sample.wav

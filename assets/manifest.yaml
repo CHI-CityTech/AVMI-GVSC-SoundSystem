@@ -1,0 +1,60 @@
+# Asset Manifest
+# This file tracks audio assets stored in a shared Dropbox folder
+# Assets are synced locally via Dropbox but excluded from Git repository
+
+version: "1.0"
+last_updated: "2025-09-20"
+dropbox_folder: "AVMI-GVSC-Audio-Assets"
+total_assets: 0
+total_size: "0B"
+
+# Asset categories
+categories:
+  samples:
+    description: "Raw audio samples and recordings"
+    count: 0
+    assets: {}
+    
+  presets:
+    description: "Audio processing presets and configurations" 
+    count: 0
+    assets: {}
+    
+  templates:
+    description: "Audio template files for synthesis"
+    count: 0
+    assets: {}
+    
+  evaluation_data:
+    description: "Large evaluation datasets"
+    count: 0
+    assets: {}
+
+  raw_recordings:
+    description: "Unprocessed audio recordings"
+    count: 0
+    assets: {}
+
+  processed:
+    description: "Processed and enhanced audio files"
+    count: 0
+    assets: {}
+
+# Example asset entry structure (remove when adding real assets):
+# categories:
+#   samples:
+#     assets:
+#       engine_idle_recording_001.wav:
+#         dropbox_path: "samples/engine_idle_recording_001.wav"
+#         size_bytes: 47185920
+#         size_human: "45.0MB"
+#         checksum: "sha256:abc123..."
+#         created: "2025-09-20T10:00:00Z"
+#         metadata:
+#           sample_rate: 48000
+#           duration: 30.5
+#           channels: 2
+#           format: "WAV"
+#           recording_date: "2025-09-15"
+#           location: "GVSC Test Track"
+#           vehicle_type: "Electric Vehicle"
