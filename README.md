@@ -88,7 +88,8 @@ While designed for **military vehicle simulation**, the project's outcomes will 
 - **PI**: Dr. Frederick W. Bianchi (WPI)  
 - **Co-PI**: Dr. David B. Smith (CUNY)  
 - **Co-PI**: Dr. Lee Moradi (WPI)  
-- **Project Participant**: Dr. Vladimir Vantsevich (WPI)  
+- **Project Participant**: Dr. Vladimir Vantsevich (WPI)
+- **Research Associate** srikar gorantla <srikar.gorantla@gmail.com>  
 
 ## Getting Started
 
