@@ -1,0 +1,53 @@
+# Vehicle Sound Mappings
+# Maps external audio samples to specific vehicle types and scenarios
+
+vehicles:
+  electric_sedan:
+    name: "Electric Sedan"
+    sounds:
+      engine:
+        instrument: "engine_ev_simulator"  # References instrument_definitions/
+        samples:
+          - "engine_idle_ev_001.wav"      # External Dropbox file
+          - "engine_accel_ev_001.wav"
+      alerts:
+        turn_signal: "turn_signal_soft.wav"
+        reverse: "reverse_beep_ev.wav"
+        
+  hybrid_suv:
+    name: "Hybrid SUV"
+    sounds:
+      engine:
+        instrument: "engine_hybrid_simulator"
+        samples:
+          - "engine_idle_hybrid_001.wav"
+          - "engine_switch_ev_gas.wav"
+      alerts:
+        turn_signal: "turn_signal_standard.wav"
+        reverse: "reverse_beep_std.wav"
+
+# Sound scenarios
+scenarios:
+  urban_driving:
+    priority_sounds: ["turn_signal", "reverse", "door_chime"]
+    volume_adjustment: -3  # dB
+    
+  highway_driving:
+    priority_sounds: ["engine", "wind_noise"]
+    volume_adjustment: 0
+    
+  parking:
+    priority_sounds: ["reverse", "proximity_alert"]
+    volume_adjustment: -6
+
+# External asset dependencies
+required_samples:
+  samples:
+    - "engine_idle_ev_001.wav"
+    - "engine_accel_ev_001.wav"
+    - "turn_signal_soft.wav"
+    - "reverse_beep_ev.wav"
+    - "engine_idle_hybrid_001.wav"
+    - "engine_switch_ev_gas.wav"
+    - "turn_signal_standard.wav"
+    - "reverse_beep_std.wav"

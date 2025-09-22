@@ -1,0 +1,57 @@
+# Engine Sound Instrument Definition
+# This file lives in Git and defines how to use external audio samples
+
+name: "Electric Vehicle Engine Simulator"
+version: "1.0"
+author: "AVMI Audio Team"
+created: "2025-09-22"
+
+# Sample mappings (files stored externally)
+samples:
+  idle:
+    file: "engine_idle_ev_001.wav"  # → Lives in Dropbox samples/
+    loop: true
+    fade_in: 0.1
+    fade_out: 0.5
+    rpm_range: [0, 1000]
+    
+  acceleration:
+    file: "engine_accel_ev_001.wav"
+    loop: false
+    trigger: "on_acceleration"
+    rpm_range: [1000, 4000]
+    
+  deceleration:
+    file: "engine_decel_ev_001.wav"
+    loop: false
+    trigger: "on_deceleration"
+    fade_out: 1.0
+
+# Processing parameters
+effects:
+  reverb:
+    enabled: true
+    room_size: 0.3
+    damping: 0.5
+    
+  spatial:
+    enabled: true
+    position: "engine_bay"
+    distance_model: "inverse"
+
+# Playback rules
+behavior:
+  volume_curve: "logarithmic"
+  pitch_shift_range: [-0.5, 1.2]
+  crossfade_time: 0.2
+  
+# External asset references
+dependencies:
+  - category: "samples"
+    files: 
+      - "engine_idle_ev_001.wav"
+      - "engine_accel_ev_001.wav" 
+      - "engine_decel_ev_001.wav"
+  - category: "presets"
+    files:
+      - "ev_spatial_config.json"

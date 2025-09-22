@@ -128,10 +128,10 @@ config/credentials.json
 *.pem
 
 # Audio Assets - External Storage Management
-# Large audio files (>10MB) should be stored externally
-# Use Git LFS or cloud storage as configured in config/assets.yaml
+# ALL audio files are stored in external Dropbox folder: ~/Dropbox (Personal)/AVMI-GVSC-Audio-Assets/
+# Repository only contains metadata, references, and management scripts
 
-# Large audio files (exclude from direct git storage)
+# Exclude ALL audio files from Git (stored externally)
 *.wav
 *.flac
 *.aiff
@@ -149,20 +149,37 @@ config/credentials.json
 **/temp_audio/
 **/audio_cache/
 **/processed_temp/
+**/audio_temp/
 
-# Large datasets
-data/audio_samples/*.wav
-data/audio_samples/*.flac
-data/evaluation_results/large_datasets/
-data/simulation_data/audio_sim_*.wav
-
-# Asset cache
+# Asset cache and temporary downloads
 .cache/
 .asset_cache/
 assets/cache/
+data/temp/
 
-# Audio software temp files
+# Audio software temporary files
 *.reapeaks
+*.pkf
+*.sfk
+*.asd
+*.als
+*.als~
+*.bak
+
+# Note: If you need to commit a small audio file for testing (< 1MB),
+# you can force-add it with: git add -f small_file.wav
+# But this should be rare - use external storage for consistency
+
+# Exceptions: Allow instrument definitions and configurations (these are metadata, not audio)
+!assets/instrument_definitions/*.yaml
+!assets/instrument_definitions/*.json
+!assets/instrument_definitions/*.xml
+!assets/sample_mappings/*.yaml
+!assets/sample_mappings/*.json
+!assets/presets/*.json
+!assets/presets/*.xml
+!assets/templates/*.yaml
+!assets/templates/*.json
 *.pkf
 *.sfk
 *.asd
