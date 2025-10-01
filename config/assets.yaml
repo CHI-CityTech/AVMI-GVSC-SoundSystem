@@ -34,33 +34,11 @@ asset_storage:
       - "assets/presets/*.json"
       - "assets/templates/*.xml"
 
-  # Asset organization
-  directory_structure:
-    samples:
-      description: "Raw audio samples and recordings"
-      storage_backend: "cloud_storage"
-      sync_policy: "on_demand"
-      
-    presets:
-      description: "Audio processing presets and configurations"
-      storage_backend: "git_lfs"
-      sync_policy: "always"
-      
-    templates:
-      description: "Audio template files for synthesis"
-      storage_backend: "git_lfs"
-      sync_policy: "always"
-      
-    evaluation_data:
-      description: "Large evaluation datasets"
-      storage_backend: "cloud_storage"
-      sync_policy: "manual"
-
-  # File size thresholds
+  # File size thresholds (for reference)
   size_thresholds:
-    small: "10MB"    # Keep in Git
-    medium: "100MB"  # Use Git LFS
-    large: "1GB"     # Use cloud storage
+    small: "5MB"     # Small configs in Git
+    medium: "50MB"   # Consider external storage
+    large: "100MB"   # Always use external storage
     
 # Asset manifest tracking
 manifest:

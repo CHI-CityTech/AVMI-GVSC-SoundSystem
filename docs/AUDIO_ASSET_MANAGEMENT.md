@@ -109,9 +109,8 @@ Your complete setup should look like this:
 ✅ **Clean repositories** - Git repos stay lightweight  
 ✅ **Easy team onboarding** - New team members get assets automatically  
 ✅ **Scalable** - Add new repositories without restructuring
-```
 
-## � Folder Structure
+## 🔄 Team Workflow
 
 Your Dropbox folder should look like:
 ```

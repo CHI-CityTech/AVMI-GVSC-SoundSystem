@@ -180,12 +180,6 @@ data/temp/
 !assets/presets/*.xml
 !assets/templates/*.yaml
 !assets/templates/*.json
-*.pkf
-*.sfk
-*.asd
-*.als
-*.als~
-*.bak
 
 # Exceptions for small audio files that should be tracked
 # (Add specific files here if needed)
