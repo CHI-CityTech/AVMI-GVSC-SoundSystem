@@ -26,30 +26,27 @@ Our research combines **theoretical analysis**, **technical development**, and *
 ## Repository Structure
 
 ```
-├── docs/                          # Documentation and research papers
-│   ├── research/                  # Research documentation and findings
-│   ├── technical/                 # Technical specifications and designs
-│   └── evaluation/                # Evaluation methodologies and results
+├── .github/                       # issues, templates, action scripts etc.
+├── assets/                        # Project assets
+│   ├── samples/                   # Sample audio files or links to libraries
+│   ├── templates/                 # Template configurations
+│   └── presets/                   # Predefined settings
+├── config/                        # Configuration files
+│   ├── simulation/                # Simulation configurations
+│   └── audio_engine/              # Audio engine settings
 ├── data/                          # Data storage
 │   ├── audio_samples/             # Raw and processed audio samples
 │   ├── simulation_data/           # Simulation parameters and outputs
 │   └── evaluation_results/        # Test results and measurements
-├── src/                           # Source code
-│   ├── dsp_algorithms/            # Digital signal processing algorithms
-│   ├── sound_synthesis/           # Hybrid synthesis models
-│   ├── spatialization/            # Multi-channel audio spatialization
-│   └── integration/               # System integration modules
+├── docs/                          # Documentation and research papers
+│   ├── research/                  # Research documentation and findings
+│   ├── technical/                 # Technical specifications and designs
+│   └── evaluation/                # Evaluation methodologies and results
+│   └── admin/                     # administrative content
 ├── notebooks/                     # Jupyter notebooks
 │   ├── analysis/                  # Data analysis notebooks
 │   ├── modeling/                  # Sound modeling experiments
 │   └── evaluation/                # Performance evaluation notebooks
-├── tests/                         # Test files
-│   ├── unit/                      # Unit tests
-│   ├── integration/               # Integration tests
-│   └── performance/               # Performance benchmarks
-├── config/                        # Configuration files
-│   ├── simulation/                # Simulation configurations
-│   └── audio_engine/              # Audio engine settings
 ├── results/                       # Generated results
 │   ├── sound_objects/             # Generated sound object library
 │   ├── models/                    # Trained/calibrated models
@@ -59,15 +56,12 @@ Our research combines **theoretical analysis**, **technical development**, and *
 │   ├── preprocessing/             # Audio preprocessing scripts
 │   ├── simulation/                # Simulation execution scripts
 │   └── evaluation/                # Evaluation and testing scripts
-├── assets/                        # Project assets
-│   ├── samples/                   # Sample audio files
-│   ├── templates/                 # Template configurations
-│   └── presets/                   # Predefined settings
-├── validation/                    # Validation frameworks
-│   ├── subjective/                # Subjective evaluation tools
-│   ├── objective/                 # Objective measurement tools
-│   └── hardware_in_loop/          # Hardware-in-the-loop testing
-└── requirements/                  # Dependency specifications
+├── src/                           # Source code
+│   ├── dsp_algorithms/            # Digital signal processing algorithms
+│   ├── sound_synthesis/           # Hybrid synthesis models
+│   ├── spatialization/            # Multi-channel audio spatialization
+│   └── integration/               # System integration modules
+
 ```
 
 ## Deliverables
